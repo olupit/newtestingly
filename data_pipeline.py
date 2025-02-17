@@ -2,11 +2,17 @@ import pandas as pd
 
 def load_data(file_path):
     """Loads the air quality dataset from a CSV file."""
+    df = pd.read_csv(file_path)
+    
+
+    """Handles missing values by filling with mean."""
+    df = df.fillna(df.mean(), inplace=True)
+
     return pd.read_csv(file_path)
 
 def clean_data(df):
-    """Handles missing values by filling with median."""
-    df = df.fillna(df.median())  # Remove missing values
+    """Performs basic data cleaning."""
+    df = df.dropna()  # Remove missing values
     return df
 
 def summarise_data(df):
