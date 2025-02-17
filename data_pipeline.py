@@ -5,8 +5,8 @@ def load_data(file_path):
     return pd.read_csv(file_path)
 
 def clean_data(df):
-    """Handles missing values by filling with median."""
-    df = df.fillna(df.median())  # Remove missing values
+    """Cleans data by removing duplicates"""
+    df = df.drop_duplicates(inplace=True)  # Remove missing values
     return df
 
 def summarise_data(df):
