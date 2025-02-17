@@ -11,13 +11,10 @@ def load_data(file_path):
     return pd.read_csv(file_path)
 
 def clean_data(df):
-<<<<<<< HEAD
-    """Cleans data by removing duplicates"""
-    df = df.drop_duplicates(inplace=True)  # Remove missing values
-=======
     """Performs basic data cleaning."""
     df = df.dropna()  # Remove missing values
->>>>>>> add-missing-value
+    """Cleans data by removing duplicates"""
+    df = df.drop_duplicates(inplace=True)  # Remove missing values
     return df
 
 def summarise_data(df):
